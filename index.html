@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="zenNotez" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ZenDocs</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="client/css/main.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <div ng-controller="MainCtrl as main">
+      <div class="navBar">
+        <div class="gridNav">
+          <a href="#/index" ng-class="{onPage: main.page ==='index'}" ng-click="main.goToGrid(); main.page='index'">
+            <span class="largeGlyph glyphicon glyphicon-th-large" aria-hidden="true"></span>
+          </a>
+        </div>
+        <div class="navTitle"> ZenDocs </div>
+        <div class="newNav">
+          <a href="#/edit/clear" ng-class="{onPage: main.page ==='edit'}" ng-click="main.goToEdit(); main.page='edit'">
+            <span class="largeGlyph glyphicon glyphicon-file" aria-hidden="true"></span>
+          </a>
+        </div>
+      </div>
+      <div ng-view></div>
+    </div>
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-route/angular-route.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="lib/greensock/utils/Draggable.js"></script>
+    <script src="lib/greensock/TweenMax.js"></script>
+    <script src="client/app.js"></script>
+    <script src='client/js/directives/onLastRepeat.js'></script>
+    <script src='client/js/MainCtrl.js'></script>
+    <script src='client/js/Shared.js'></script>
+    <script src='client/js/EditCtrl.js'></script>
+    <script src='client/js/ViewPostCtrl.js'></script>
+  </body>
+</html>
+

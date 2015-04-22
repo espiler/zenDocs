@@ -1,0 +1,10 @@
+<div class="viewPost">
+	<div class="viewEdit">
+		<a href="#/edit"><span class="largeGlyph glyphicon glyphicon-edit" aria-hidden="true"></span></a>
+	</div>
+	<div class="trash" ng-click="view.deletePost()">
+		<span class="largeGlyph glyphicon glyphicon-trash" aria-hidden="true"></span>
+	</div>
+	<h1 class="viewTitle">{{view.currentPost.title}}</h1>
+	<p class="viewMsg">{{view.currentPost.msg}}</p>
+</div>

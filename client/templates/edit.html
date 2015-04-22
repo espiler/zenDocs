@@ -1,0 +1,12 @@
+<div class="newPost">
+	<div class="trash" ng-click="edit.deletePost()">
+		<span class="largeGlyph glyphicon glyphicon-trash" aria-hidden="true"></span>
+	</div>
+	<input class="newPostTitle" type="text" ng-model="edit.title" ng-change="edit.postChanged()" placeholder="untitled"/>
+	<h4 class="titleRequired" ng-if="edit.titleRequired"> Title Required! </h4>
+	<h4 class="titleRequired" ng-if="edit.titleInUse"> Title already in use </h4>
+	<textarea class="newPostMsg" ng-model="edit.msg" ng-change="edit.postChanged()" placeholder="what makes you zen?"></textarea>
+	<button class="savePost" ng-click="edit.savePost()">Set in stone</button>
+	<h4 class="postSaved" ng-if="edit.postSaved"> Saved! </h4>
+	<h4 class="empty" ng-if="edit.isEmpty"> Nothing to save </h4>
+</div>

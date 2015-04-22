@@ -1,0 +1,31 @@
+<div class="grid">	
+	<div class="dragOptions">
+		<div class="drop left"><span id="view" class="dropicon glyphicon glyphicon-eye-open" aria-hidden="true"></span></div>
+		<div class="drop middle"><span id="edit" class="dropicon glyphicon glyphicon-edit" aria-hidden="true"></span></div>
+		<div class="drop right"><span id="delete" class="dropicon glyphicon glyphicon-trash" aria-hidden="true"></span></div>
+	</div>
+	<div class="fade"></div>
+	<div class="allPosts" ng-if="main.postList.length > 0">
+		<div class="sort">
+			<input class='filterText' type="text" ng-model="filter" placeholder="search"></input>
+			<select class='sortBar' ng-model="main.sort">
+			  <option value="" disabled>Sort by</option>
+			  <option value="title">A-Z</option>
+			  <option value="created">Created</option>
+			  <option value="-modified">Most recent</option>
+			</select>
+		</div>
+		<div class="post" ng-repeat="post in main.postList | filter: filter | orderBy: main.sort" ng-click="main.setCurrentPost(post)" id="{{$index}}" on-last-repeat>
+			<img class="noteIcon" src="client/img/zennote-icon.png"/>
+			<h3 class="postTitle"> {{post.title}} </h3>
+		</div>
+	</div>
+	<div class="vertAlign" ng-if="main.postList.length === 0">
+		<a href="#/edit" ng-click="main.goToEdit(); main.page='edit'" class="grayLink">
+			<h2> 
+				You have no notes. <br>
+				Tap here to begin. 
+			</h2>
+		</a>
+	</div>
+</div>
